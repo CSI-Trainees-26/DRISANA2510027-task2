@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7f2;
+    color: #26351f;
+    display: flex;
+}
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    padding: 4vh 2%;
+    border-right: 1px solid #ddd;
+}
+.logo {
+    padding: 1%;
+}
+.logo h2 {
+    color: rgb(38, 80, 30);
+    font-size: 1.5rem;
+}
+.logo p {
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    line-height: 1.4;
+}
+.navigation {
+    margin-top: 6vh;
+}
+.navigation a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5vh 8%;
+    margin-bottom: 1vh;
+    text-decoration: none;
+    color: #555;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+.navigation a i {
+    width: 1.2rem;
+}
+.navigation a:hover {
+    background-color: #eef6e9;
+}
+.navigation a.active {
+    background-color: #e2f1dc;
+    color: rgb(38, 80, 30);
+}
+.main {
+    width: 80%;
+    padding: 4vh 3%;
+}
+.main h1 {
+    font-size: 2rem;
+}
+.main p {
+    margin-top: 1vh;
+    color: #777;
+}
+.banner {
+    width: 100%;
+    height: 16vh;
+    margin-top: 3vh;
+    background-color: #dfeeda;
+    border-radius: 1rem;
+}
+.cards {
+    display: flex;
+    gap: 2%;
+    margin-top: 3vh;
+}
+.card {
+    width: 18%;
+    min-height: 15vh;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.icon {
+    min-width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+.taskicon {
+    background-color: #fff0c7;
+    color: #f3a51b;
+}
+.habiticon {
+    background-color: #dff3d5;
+    color: #4cae4f;
+}
+.watericon {
+    background-color: #d9f1ff;
+    color: #159bd7;
+}
+.calorieicon {
+    background-color: #ffe1cf;
+    color: #f47c32;
+}
+.sleeepicon {
+    background-color: #eadcff;
+    color: #9a62df;
+}
+.cardtext {
+    display: block;
+}
+.card h4 {
+    color: #26351f;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+.card h2 {
+    color: #18251d;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.card p {
+    color: #777;
+    font-size: 0.75rem;
+}
+.progress {
+    width: 100%;
+    height: 0.5rem;
+    background-color: #e8eee7;
+    border-radius: 1rem;
+}
+.progressbar {
+    width: 60%;
+    height: 100%;
+    background-color: #65c466;
+    border-radius: 1rem;
+}
+#sleep {
+   background-color: #9a62df; 
+}
+#calories {
+   background-color:#f47c32; 
+}
+#water {
+   background-color: #159bd7; 
+}
+#habits {
+   background-color: #4cae4f; 
+}
+#task {
+   background-color: #f3a51b;
+}
