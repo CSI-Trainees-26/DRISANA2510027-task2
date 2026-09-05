@@ -22,8 +22,13 @@
       </nav>
      </aside>
      <div class="main">
-        <h1> Good Morning , Drisana! <i class="fa-solid fa-sun" style="color: #f9b52b;"></i></h1>
-        <p> "small steps today , stronger you tomorrow. "</p>
+      <div class="content">
+       <div class="topheader">
+      <div><h1>Good Morning, Drisana! <i class="fa-solid fa-sun" style="color: #f9b52b;"></i></h1> <p>Let's make today productive and healthy.</p>
+      </div>
+     <div class="date">
+     <i class="fa-regular fa-calendar"></i>Thursday, 4 September 2025</div>
+    </div>
         <section class="banner"> </section>
         <section class="cards">
         <div class="card">
@@ -34,8 +39,8 @@
         <h4> Tasks </h4>
         <h2>3 / 5</h2>
         <div class="progress">
-    <div class="progressbar" id="task"></div>
-</div> </div> </div>
+        <div class="progressbar" id="task"></div>
+        </div> </div> </div>
         <div class="card">
         <div class="icon habiticon">
         <i class="fa-solid fa-leaf"></i></div>
@@ -44,7 +49,7 @@
         <h2>4 / 6</h2>
         <div class="progress">
     <div class="progressbar" id="habits"></div>
-</div></div></div>
+    </div></div></div>
         <div class="card">
         <div class="icon watericon">
         <i class="fa-solid fa-droplet"></i></div>
@@ -52,20 +57,11 @@
         <h4> Water </h4>
         <h2>1.5/2.5L</h2>
         <div class="progress">
-    <div class="progressbar" id="water"></div>
-    </div>
+        <div class="progressbar" id="water"></div>
         </div>
         </div>
-        <div class="card">
-        <div class="icon calorieicon">
-        <i class="fa-solid fa-fire"></i>
         </div>
-        <div class="cardtext">
-        <h4> Calories </h4>
-        <h2>1250</h2>
-      <div class="progress">
-    <div class="progressbar" id="calories"></div>
-    </div></div></div>
+        
         <div class="card">
         <div class="icon sleeepicon">
         <i class="fa-solid fa-moon"></i> </div>
@@ -73,8 +69,8 @@
         <h4> Sleep </h4>
         <h2>7.5 hrs</h2>
        <div class="progress">
-    <div class="progressbar" id="sleep"></div>
-     </div></div></div>
+       <div class="progressbar" id="sleep"></div>
+       </div></div></div>
        </section>
        
        <section class="taskhabit">
@@ -87,9 +83,9 @@
        <input type="checkbox"><p>Learn Javascript</p></div>
        <div class="task"> <input type="checkbox"><p>Cover Syllabus</p></div>
        <div class="task"><input type="checkbox"><p>Code</p></div>
-      <p class="view-all">View all  your tasks →</p>
+       <p class="view-all">View all  your tasks →</p>
        </div>
-      <div class="habits">
+       <div class="habits">
         <div class="heading">
         <h2>Today's Habits</h2>
         <button>+ Add Habit</button>
@@ -101,7 +97,120 @@
       <p class="view-all">View all your habits →</p>
     </div>
     </section>
+    
+    <section class="bottomsection">
+    <div class="weekly">
+    <div class="heading">
+    <h2>Weekly Activity</h2>
+    <span>This Week</span>
+    </div>
+    <div class="chart">
+    <div class="bar">
+    <div class="barfill" style="height: 40%;"></div>
+    <p>Mon</p></div>
+    <div class="bar">
+    <div class="barfill" style="height: 70%;"></div> <p>True</p></div>
+    <div class="bar"><div class="barfill" style="height: 50%;"></div><p>Wed</p></div>
+    <div class="bar"><div class="barfill" style="height: 85%;"></div><p>Thu</p></div>
+    <div class="bar"><div class="barfill" style="height: 60%;"></div><p>Fri</p></div>
+    <div class="bar"><div class="barfill" style="height: 75%;"></div><p>Sat</p></div>
+    <div class="bar"><div class="barfill" style="height: 45%;"></div><p>Sun</p></div>
+    </div></div>
+    <div class="streak">
+    <div class="heading">
+    <h2><i class="fa-solid fa-fire" style="color: #f47c32;"></i> Habit Streak</h2><span>September 2025</span></div>
+    <div class="weekdays">
+    <span>Mon</span>
+    <span>Tue</span>
+    <span>Wed</span>
+    <span>Thu</span>
+    <span>Fri</span>
+    <span>Sat</span>
+    <span>Sun</span>
+    </div>
+    <div class="monthdatagrid">
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        <span class="done"></span>
+        <span></span>
+        <span class="done"></span>
+        </div>
+        <div class="streakresult">
+        <strong>12 day streak <i class="fa-solid fa-fire" style="color: #f47c32;"></i></strong>
+        <span>Keep going!</span>
+       </div></div>
+       </section>
+    
+  <section class="bottomsummary">
+  <div class="calories">
+  <div class="summarytitle">
+  <h2><i class="fa-solid fa-utensils" style="color: #f47c32; margin-right: 8px;"></i>Calories</h2></div>
+  <h2>1,200 kcal</h2><p>of 2,000 kcal</p>
+ <div class="calorieprogress"><div></div></div></div>
+     <div class="weeksummary">
+     <h2><i class="fa-solid fa-chart-column" style="color: #3f8236; margin-right: 8px;"></i>This Week's Summary</h2>
+     <div class="summaryitems"> 
+    <div><strong>18</strong><span>Tasks added</span></div>
+   <div><strong>14</strong><span>Tasks completed</span></div>
+   <div><strong>6</strong><span>Habits created</span></div>
+   <div><strong>14.5 L</strong><span>Total water</span></div>
+  <div><strong>51 hrs</strong><span>Total sleep</span></div>
+  
+  </div></div>
+</section>
 </div>
+    <div class="rightpanel">
+    <div class="pomodoro">
+    <h2>Pomodoro</h2>
+    <div class="timer">25:00</div>
+    <div class="timerbuttons"><button>Start</button><button>Reset</button>
+    </div>
+    </div>
+    <div class="quote">
+    <div class="quoteheading">
+    <h2>Today's Quote</h2><span>•••</span></div>
+    <div class="quotebox">
+    <p>"Small steps every day lead to big changes."</p>
+    
+    </div>
+   <div class="quotebuttons">
+  <button class="savequote">&hearts; Save Quote</button>
+  <button class="newquote"> ↻ New Quote</button></div>
+  </div>
+  <div class="motivation"><i class="fa-solid fa-leaf"></i>
+  <h3>Become Your Best Version!</h3>
+  <p>Keep going and stay consistent.</p>
+  </div></div>
 
 </body>
 </html>

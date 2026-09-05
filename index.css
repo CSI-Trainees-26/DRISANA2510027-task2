@@ -52,12 +52,16 @@ body {
 }
 .navigation a.active {
     background-color: #e2f1dc;
-    color: rgb(38, 80, 30);
+    color: #121c10;
 }
 .main {
-    width: 80%;
-    padding: 4vh 3%;
+    width: 85%;
+    padding: 4vh 2%;
+    display: flex;
+    gap: 2%;
+    align-items: flex-start;
 }
+
 .main h1 {
     font-size: 2rem;
 }
@@ -78,7 +82,7 @@ body {
     margin-top: 3vh;
 }
 .card {
-    width: 18%;
+    width: 23.5%;
     min-height: 15vh;
     background-color: white;
     border-radius: 1rem;
@@ -159,4 +163,392 @@ body {
 }
 #task {
    background-color: #f3a51b;
+}
+.taskhabit {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    margin-top: 3vh;
+}
+.tasks {
+    width: 49%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 3%;
+}
+.habits {
+    width: 49%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 3%;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+.heading h2 {
+    color: #26351f;
+    font-size: 1.2rem;
+}
+.heading button {
+    border: none;
+    background-color: #e2f1dc;
+    color: #2d6926;
+    padding: 1vh 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.task, .habit {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5vh 0;
+    border-bottom: 1px solid #eee;
+}
+.task input,.habit input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #4cae4f;
+}
+.task p,.habit p {
+    color: rgb(18, 28, 16) ;
+    font-size: 0.9rem;
+}
+.view-all {
+    color: #3f8236;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+.content {
+    width: 72%;
+}
+.rightpanel {
+    width: 26%;
+}
+.pomodoro,.quote,.motivation {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2vh;
+}
+.pomodoro h2,.quote h2 {
+    font-size: 1.1rem;
+    color: #26351f;
+}
+.timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 3vh 0;
+    color: #26351f;
+}
+.timerbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.timerbuttons button {
+    border: none;
+    background-color: #e2f1dc;
+    color: #2d6926;
+    padding: 1vh 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.quote p {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 2vh;
+}
+.motivation {
+    background-color: #e2f1dc;
+    text-align: center;
+}
+.motivation i {
+    font-size: 2rem;
+    color: #3f8236;
+    margin-bottom: 1vh;
+}
+.motivation h3 {
+    color: #26351f;
+    margin-bottom: 1vh;
+}
+.motivation p {
+    color: #777;
+    font-size: 0.85rem;
+}
+.bottomsection {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    margin-top: 3vh;
+}
+
+.weekly {
+    width: 65%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+}
+
+.streak {
+    width: 33%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+}
+
+.chart {
+    height: 18vh;
+    margin-top: 2vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    border-bottom: 1px solid #ddd;
+}
+
+.bar {
+    width: 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.barfill {
+    width: 100%;
+    background-color: #65b85c;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.bar p {
+    color: #777;
+    font-size: 0.7rem;
+    margin-top: 0.7rem;
+}
+
+.streakdays {
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh 0;
+}
+
+.streakdays span {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: #dff3d5;
+    color: #4cae4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.streak h3 {
+    color: #3f8236;
+    font-size: 1rem;
+}
+
+.streak p {
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 1vh;
+}
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.weekdays span {
+    text-align: center;
+    font-size: 0.65rem;
+    color: #777;
+}
+
+.monthdatagrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.4rem;
+}
+
+.monthdatagrid span {
+    height: 1.1rem;
+    background-color: #edf4ea;
+    border-radius: 0.25rem;
+}
+
+.monthdatagrid span.done {
+    background-color: #8dcc7e;
+}
+
+.streakresult {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5vh;
+}
+
+.streakresult strong {
+    color: #26351f;
+    font-size: 0.85rem;
+}
+
+.streakresult span {
+    color: #777;
+    font-size: 0.75rem;
+}
+.quoteheading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quoteheading h2 {
+    font-size: 1.1rem;
+}
+
+.quoteheading span {
+    color: #777;
+}
+
+.quotebox {
+    background-color: #f0f8ec;
+    border-radius: 1rem;
+    padding: 2vh 1rem;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.quotebox p {
+    color: #26351f;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.quotebox span {
+    display: block;
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 1vh;
+}
+
+.quotebuttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-top: 1.5vh;
+}
+
+.quotebuttons button {
+    flex: 1;
+    border: none;
+    padding: 1vh 0.5rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.savequote {
+    background-color: #ffe9e9;
+    color: #d95353;
+}
+
+.newquote {
+    background-color: #e2f1dc;
+    color: #2d6926;
+}
+.bottomsummary {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    margin-top: 3vh;
+}
+
+.calories {
+    width: 32%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+}
+
+.summarytitle h2 {
+    font-size: 1rem;
+    margin-bottom: 2vh;
+}
+
+.calories > h2 {
+    font-size: 1.4rem;
+}
+
+.calories > p {
+    text-align: right;
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: -2vh;
+}
+
+.calorieprogress {
+    width: 100%;
+    height: 0.5rem;
+    background-color: #e8eee7;
+    border-radius: 1rem;
+    margin-top: 2vh;
+}
+
+.calorieprogress div {
+    width: 60%;
+    height: 100%;
+    background-color: #f47c32;
+    border-radius: 1rem;
+}
+
+.weeksummary {
+    width: 66%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+}
+
+.weeksummary h2 {
+    font-size: 1rem;
+    margin-bottom: 2vh;
+}
+
+.summaryitems {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summaryitems div {
+    text-align: center;
+    padding: 0 1rem;
+    border-right: 1px solid #eee;
+}
+
+.summaryitems div:last-child {
+    border-right: none;
+}
+
+.summaryitems strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #18251d;
+}
+
+.summaryitems span {
+    display: block;
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: 0.5vh;
 }
