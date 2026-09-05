@@ -15,6 +15,9 @@ body {
     background-color: white;
     padding: 4vh 2%;
     border-right: 1px solid #ddd;
+     position: fixed;
+    left: 0;
+    top: 0;
 }
 .logo {
     padding: 1%;
@@ -47,10 +50,269 @@ body {
 .navigation a i {
     width: 1.2rem;
 }
+.navigation a:nth-child(5) i {
+    color: rgb(60, 140, 190);
+}
 .navigation a:hover {
     background-color: #eef6e9;
 }
 .navigation a.active {
     background-color: #e2f1dc;
     color: #121c10;
+}
+.sidebarbottom {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    color: #3f8236;
+}
+.sidebarbottom i {
+    font-size: 2.5rem;
+    margin-bottom: 1vh;
+}
+.sidebarbottom p {
+    color: #26351f;
+    line-height: 1.6;
+}
+.main {
+    width: 80%;
+    margin-left: 20%;
+    padding: 4vh 3%;
+}
+.content {
+    width: 100%;
+}
+.topheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main h1 {
+    font-size: 2rem;
+    color: #18251d;
+}
+.main p {
+    margin-top: 1vh;
+    color: #777;
+}
+.date {
+    background-color: white;
+    padding: 1.2vh 1.2rem;
+    border-radius: 0.8rem;
+    color: #26351f;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+.date i {
+    color: #3f8236;
+    margin-right: 0.5rem;
+}
+.taskcards {
+    display: flex;
+    gap: 2%;
+    margin-top: 4vh;
+}
+.summarycard {
+    width: 32%;
+    min-height: 14vh;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.summaryicon {
+    min-width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+.totalicon {
+    background-color: #e2f1dc;
+    color: #3f8236;
+}
+.completedicon {
+    background-color: #dff3d5;
+    color: #4cae4f;
+}
+.pendingicon {
+    background-color: #fff0c7;
+    color: #f3a51b;
+}
+.summarycard h4 {
+    font-size: 0.9rem;
+    color: #26351f;
+    margin-bottom: 0.5rem;
+}
+.summarycard h2 {
+    font-size: 1.7rem;
+    color: #18251d;
+}
+.todaytasks {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2.5%;
+    margin-top: 3vh;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+.heading h2 {
+    color: #26351f;
+    font-size: 1.25rem;
+}
+.addtask {
+    border: none;
+    background-color: #3f8236;
+    color: white;
+    padding: 1.2vh 1.2rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.addtask:hover {
+    background-color: #326b2c;
+}
+.taskrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.8vh 1%;
+    border: 1px solid #edf0eb;
+    border-radius: 0.7rem;
+    margin-top: 1vh;
+}
+.taskrow:hover {
+    background-color: #f8fbf6;
+}
+.taskrow input,.smalltask input {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: #4cae4f;
+}
+.taskrow p,.smalltask p {
+    color: #18251d;
+    font-size: 0.95rem;
+    margin: 0;
+}
+.taskactions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.8rem;
+}
+.taskactions button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #3f8236;
+    font-size: 0.9rem;
+}
+.taskactions button.delete {
+    color: #e57373;
+}
+.taskactions button:hover {
+    transform: scale(1.1);
+}
+.completedtask p {
+    text-decoration: line-through;
+    color: #777;
+}
+.tasklists {
+    display: flex;
+    gap: 2%;
+    margin-top: 3vh;
+}
+.tasklist {
+    width: 49%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2.5%;
+}
+.listheading {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-bottom: 1.5vh;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5vh;
+}
+.listheading h2 {
+    font-size: 1.15rem;
+    color: #26351f;
+}
+.listicon {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.smalltask {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.6vh 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+.smalltask:last-child {
+    border-bottom: none;
+}
+.smalltask:hover {
+    background-color: #f8fbf6;
+}
+
+
+@media (max-width: 800px) {
+    .sidebar {
+        width: 23%;
+    }
+    .main {
+        width: 77%;
+        margin-left: 23%;
+    }
+    .taskcards {
+        flex-wrap: wrap;
+    }
+    .summarycard {
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .main {
+        width: 100%;
+        margin-left: 0;
+        padding: 3vh 5%;
+    }
+    .topheader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vh;
+    }
+    .date {
+        width: 100%;
+    }
+    .summarycard {
+        width: 100%;
+    }
+    .taskcards,.tasklists {
+        flex-direction: column;
+    }
+    .tasklist {
+        width: 100%;
+    }
 }
