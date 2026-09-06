@@ -16,6 +16,9 @@ let task = document.createElement("div");
 task.classList.add("taskrow");
 let checkbox = document.createElement("input");
 checkbox.type = "checkbox";
+checkbox.addEventListener("change", () => {
+task.classList.toggle("completedtask");
+updateCounters();});
 let text = document.createElement("p");
 text.textContent = taskText;
 task.appendChild(checkbox);
@@ -25,23 +28,44 @@ let delAdd = document.createElement("div");
 delAdd.classList.add("taskactions");
 let editBtn = document.createElement("button");
 editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
-editBtn.addEventListener("click", ()=> {
-    let editTask= document.createElement("input");
-    editTask.value = text.textContent;
-    task.replaceChild(editTask , text);
-    editTask.focus();
-    editTask.addEventListener("keydown", (e) => {
-if (e.key === "Enter" && editTask.value!== "") {
-  text.textContent = editTask.value;
- task.replaceChild(text, editTask);} }); });
+
+ 
 let deleteBtn = document.createElement("button");
 deleteBtn.classList.add("delete");
 deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
 deleteBtn.addEventListener("click" ,( )=>{
     task.remove();
+     updateCounters();
+    
 });
+ editBtn.addEventListener("click", () => {
+let editTask = document.createElement("input");
+editTask.value = text.textContent;
+task.replaceChild(editTask, text);
+editTask.focus();
+editTask.addEventListener("keydown", (e) => {
+if (e.key === "Enter" && editTask.value !== "") {
+text.textContent = editTask.value;
+task.replaceChild(text, editTask); }});
+
+});
+
  delAdd.appendChild(editBtn);
  delAdd.appendChild(deleteBtn);
  task.appendChild(delAdd);
  todayTasks.appendChild(task);
- newTask.remove();}}}); });
+ newTask.remove(); 
+ updateCounters();  }}}); });
+
+ function updateCounters() {
+ let totalTasks = document.querySelector("#totalTasks");
+ let tasks = document.querySelectorAll(".todaytasks .taskrow");
+ totalTasks.textContent = tasks.length;
+ let completedTasks = document.querySelector("#completedTasks");
+ let completed = document.querySelectorAll(".todaytasks .completedtask");
+ completedTasks.textContent = completed.length;
+let pendingTasks = document.querySelector("#pendingTasks");
+pendingTasks.textContent = tasks.length - completed.length;
+
+}
+updateCounters();
