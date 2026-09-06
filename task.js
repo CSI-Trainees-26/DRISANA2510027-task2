@@ -25,6 +25,15 @@ let delAdd = document.createElement("div");
 delAdd.classList.add("taskactions");
 let editBtn = document.createElement("button");
 editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+editBtn.addEventListener("click", ()=> {
+    let editTask= document.createElement("input");
+    editTask.value = text.textContent;
+    task.replaceChild(editTask , text);
+    editTask.focus();
+    editTask.addEventListener("keydown", (e) => {
+if (e.key === "Enter" && editTask.value!== "") {
+  text.textContent = editTask.value;
+ task.replaceChild(text, editTask);} }); });
 let deleteBtn = document.createElement("button");
 deleteBtn.classList.add("delete");
 deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
