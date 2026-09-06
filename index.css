@@ -224,11 +224,9 @@ body {
     margin-top: 2vh;
     cursor: pointer;
 }
-
 .content {
     width: 72%;
-}
-.rightpanel {
+}.rightpanel {
     width: 26%;
 }
 .pomodoro,.quote,.motivation {
@@ -290,21 +288,18 @@ body {
     gap: 2%;
     margin-top: 3vh;
 }
-
 .weekly {
     width: 65%;
     background-color: white;
     border-radius: 1rem;
     padding: 2%;
 }
-
 .streak {
     width: 33%;
     background-color: white;
     border-radius: 1rem;
     padding: 2%;
 }
-
 .chart {
     height: 18vh;
     margin-top: 2vh;
@@ -313,7 +308,6 @@ body {
     justify-content: space-around;
     border-bottom: 1px solid #ddd;
 }
-
 .bar {
     width: 8%;
     height: 100%;
@@ -322,25 +316,21 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
-
 .barfill {
     width: 100%;
     background-color: #65b85c;
     border-radius: 0.4rem 0.4rem 0 0;
 }
-
 .bar p {
     color: #777;
     font-size: 0.7rem;
     margin-top: 0.7rem;
 }
-
 .streakdays {
     display: flex;
     justify-content: space-between;
     margin: 3vh 0;
 }
-
 .streakdays span {
     width: 2rem;
     height: 2rem;
@@ -351,12 +341,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .streak h3 {
     color: #3f8236;
     font-size: 1rem;
 }
-
 .streak p {
     color: #777;
     font-size: 0.8rem;
@@ -368,41 +356,34 @@ body {
     gap: 0.4rem;
     margin-bottom: 0.5rem;
 }
-
 .weekdays span {
     text-align: center;
     font-size: 0.65rem;
     color: #777;
 }
-
 .monthdatagrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0.4rem;
 }
-
 .monthdatagrid span {
     height: 1.1rem;
     background-color: #edf4ea;
     border-radius: 0.25rem;
 }
-
 .monthdatagrid span.done {
     background-color: #8dcc7e;
 }
-
 .streakresult {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5vh;
 }
-
 .streakresult strong {
     color: #26351f;
     font-size: 0.85rem;
 }
-
 .streakresult span {
     color: #777;
     font-size: 0.75rem;
@@ -412,15 +393,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 .quoteheading h2 {
     font-size: 1.1rem;
 }
-
 .quoteheading span {
     color: #777;
 }
-
 .quotebox {
     background-color: #f0f8ec;
     border-radius: 1rem;
@@ -428,28 +406,24 @@ body {
     margin-top: 2vh;
     text-align: center;
 }
-
 .quotebox p {
     color: #26351f;
     font-size: 0.9rem;
     line-height: 1.6;
     margin: 0;
 }
-
 .quotebox span {
     display: block;
     color: #777;
     font-size: 0.8rem;
     margin-top: 1vh;
 }
-
 .quotebuttons {
     display: flex;
     justify-content: space-between;
     gap: 0.7rem;
     margin-top: 1.5vh;
 }
-
 .quotebuttons button {
     flex: 1;
     border: none;
@@ -458,12 +432,10 @@ body {
     cursor: pointer;
     font-size: 0.75rem;
 }
-
 .savequote {
     background-color: #ffe9e9;
     color: #d95353;
 }
-
 .newquote {
     background-color: #e2f1dc;
     color: #2d6926;
@@ -474,30 +446,25 @@ body {
     gap: 2%;
     margin-top: 3vh;
 }
-
 .calories {
     width: 32%;
     background-color: white;
     border-radius: 1rem;
     padding: 2%;
 }
-
 .summarytitle h2 {
     font-size: 1rem;
     margin-bottom: 2vh;
 }
-
 .calories > h2 {
     font-size: 1.4rem;
 }
-
 .calories > p {
     text-align: right;
     font-size: 0.7rem;
     color: #777;
     margin-top: -2vh;
 }
-
 .calorieprogress {
     width: 100%;
     height: 0.5rem;
@@ -505,50 +472,60 @@ body {
     border-radius: 1rem;
     margin-top: 2vh;
 }
-
 .calorieprogress div {
     width: 60%;
     height: 100%;
     background-color: #f47c32;
     border-radius: 1rem;
 }
-
 .weeksummary {
     width: 66%;
     background-color: white;
     border-radius: 1rem;
     padding: 2%;
 }
-
 .weeksummary h2 {
     font-size: 1rem;
     margin-bottom: 2vh;
 }
-
 .summaryitems {
     display: flex;
     justify-content: space-between;
 }
-
 .summaryitems div {
     text-align: center;
     padding: 0 1rem;
     border-right: 1px solid #eee;
 }
-
 .summaryitems div:last-child {
     border-right: none;
 }
-
 .summaryitems strong {
     display: block;
     font-size: 1.1rem;
     color: #18251d;
 }
-
 .summaryitems span {
     display: block;
     font-size: 0.7rem;
     color: #777;
     margin-top: 0.5vh;
+}
+#addWater {
+    margin-top: 1vh;
+    padding: 0.8vh 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #159bd7;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#addWater:hover {
+    background-color: #326b2c;
+    transform: translateY(-1px);
+}
+#addWater:active {
+    transform: scale(0.97);
 }
