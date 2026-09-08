@@ -37,7 +37,7 @@
         </div>
         <div class="cardtext">
         <h4> Tasks </h4>
-        <h2>3 / 5</h2>
+        <h2 id="taskProgress">0 / 0</h2>
         <div class="progress">
         <div class="progressbar" id="task"></div>
         </div> </div> </div>
@@ -69,10 +69,11 @@
         <i class="fa-solid fa-moon"></i> </div>
         <div class="cardtext">
         <h4> Sleep </h4>
-        <h2>7.5 hrs</h2>
+        <h2 id ="sleepData">0/6 hrs</h2>
        <div class="progress">
        <div class="progressbar" id="sleep"></div>
-       </div></div></div>
+       </div> <input type="number" id="sleepInput" placeholder="Hours slept" min="0" step="0.5">
+       <button id="addSleep">Add Sleep</button></div></div>
        </section>
        
        <section class="taskhabit">
@@ -176,9 +177,12 @@
   <section class="bottomsummary">
   <div class="calories">
   <div class="summarytitle">
-  <h2><i class="fa-solid fa-utensils" style="color: #f47c32; margin-right: 8px;"></i>Calories</h2></div>
-  <h2>1,200 kcal</h2><p>of 2,000 kcal</p>
- <div class="calorieprogress"><div></div></div></div>
+  <h2> <i class="fa-solid fa-utensils" style="color: #f47c32; margin-right: 8px;"></i>Calories</h2></div>
+   <h2 id="calorieData">0 kcal</h2><p>of 2,000 kcal</p>
+   <div class="calorieprogress"><div id="calorieBar"></div></div>
+    <input type="number" id="calorieInput" placeholder="Calories eaten" min="0">
+  <button id="addCalories">Add Calories</button>
+</div>
      <div class="weeksummary">
      <h2><i class="fa-solid fa-chart-column" style="color: #3f8236; margin-right: 8px;"></i>This Week's Summary</h2>
      <div class="summaryitems"> 

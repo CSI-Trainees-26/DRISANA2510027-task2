@@ -1,3 +1,9 @@
+
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 let addBtn = document.querySelector(".addtask");
 addBtn.addEventListener("click", () => {
 let newTask = document.createElement("div");
@@ -12,12 +18,26 @@ input.addEventListener("keydown", (e) => {
 if (e.key === "Enter") {
  let taskText = input.value;
 if (taskText !== "") {
+     tasks.push({
+                    text: taskText,
+                    completed: false
+                });
+                
+
+                saveTasks();
 let task = document.createElement("div");
 task.classList.add("taskrow");
 let checkbox = document.createElement("input");
 checkbox.type = "checkbox";
 checkbox.addEventListener("change", () => {
 task.classList.toggle("completedtask");
+let taskIndex = tasks.findIndex((item) => item.text === text.textContent);
+
+                    if (taskIndex !== -1) {
+                        tasks[taskIndex].completed = checkbox.checked;
+                    }
+
+                    saveTasks();
 updateCounters();});
 let text = document.createElement("p");
 text.textContent = taskText;
@@ -34,8 +54,15 @@ let deleteBtn = document.createElement("button");
 deleteBtn.classList.add("delete");
 deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
 deleteBtn.addEventListener("click" ,( )=>{
-    task.remove();
-     updateCounters();
+     let taskIndex = tasks.findIndex((item) => item.text === text.textContent);
+
+                 if (taskIndex !== -1) {
+    tasks.splice(taskIndex, 1);
+}
+
+saveTasks();
+task.remove();
+updateCounters();   
     
 });
  editBtn.addEventListener("click", () => {
@@ -46,7 +73,8 @@ editTask.focus();
 editTask.addEventListener("keydown", (e) => {
 if (e.key === "Enter" && editTask.value !== "") {
 text.textContent = editTask.value;
-task.replaceChild(text, editTask); }});
+task.replaceChild(text, editTask);
+ saveTasks(); }});
 
 });
 

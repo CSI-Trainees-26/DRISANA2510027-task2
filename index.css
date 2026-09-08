@@ -529,3 +529,61 @@ body {
 #addWater:active {
     transform: scale(0.97);
 }
+#sleepInput {
+    margin-top: 1vh;
+    width: 7rem;
+    height: 2.3rem;
+    padding: 0 0.7rem;
+    border: 1px solid #e5ebe2;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 0.8rem;
+    color: #26351f;
+    background-color: white;
+}
+#sleepInput:focus {
+    border-color: #3f8236;
+}
+#sleepInput::placeholder {
+    color: #999;
+}
+#addSleep {
+    margin-top: 1vh;
+    padding: 0.7rem 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color:#9a62df ;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#addSleep:hover {
+    background-color: #326b2c;
+    transform: translateY(-1px);
+}
+#addSleep:active {
+    transform: scale(0.97);
+}
+.calories input{
+    width: 45%;
+    padding: 0.6rem;
+    margin-top: 0.7rem;
+    border: 1px solid #d5dfd0;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 0.9rem;
+}
+.calories button{
+    padding: 0.6rem 0.8rem;
+    margin-left: 0.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #dfeeda;
+    color: rgb(38,80,30);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.calories button:hover{
+    background: #cfe5c8;
+}
