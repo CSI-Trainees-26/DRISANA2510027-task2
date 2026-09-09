@@ -186,11 +186,11 @@
      <div class="weeksummary">
      <h2><i class="fa-solid fa-chart-column" style="color: #3f8236; margin-right: 8px;"></i>This Week's Summary</h2>
      <div class="summaryitems"> 
-    <div><strong>18</strong><span>Tasks added</span></div>
-   <div><strong>14</strong><span>Tasks completed</span></div>
+    <div><strong id="weeklytotaltask">0</strong><span>Tasks added</span></div>
+   <div><strong id="weeklytaskdone">0</strong><span>Tasks completed</span></div>
    <div><strong>6</strong><span>Habits created</span></div>
-   <div><strong>14.5 L</strong><span>Total water</span></div>
-  <div><strong>51 hrs</strong><span>Total sleep</span></div>
+   <div><strong id="weeklywater">0</strong><span>Total water</span></div>
+  <div><strong id="weeklysleep">0</strong><span>Total sleep</span></div>
   
   </div></div>
 </section>
@@ -198,16 +198,15 @@
     <div class="rightpanel">
     <div class="pomodoro">
     <h2>Pomodoro</h2>
-    <div class="timer">25:00</div>
-    <div class="timerbuttons"><button>Start</button><button>Reset</button>
+    <div class="timer" id="timer">25:00</div>
+    <div class="timerbuttons"><button id="start">Start</button><button id="reset">Reset</button>
     </div>
     </div>
     <div class="quote">
     <div class="quoteheading">
     <h2>Today's Quote</h2><span>•••</span></div>
     <div class="quotebox">
-    <p>"Small steps every day lead to big changes."</p>
-    
+    <p id =quoteline>"Small steps every day lead to big changes."</p>
     </div>
    <div class="quotebuttons">
   <button class="savequote">&hearts; Save Quote</button>

@@ -90,3 +90,51 @@ let percentage = (calories / calorieTarget) * 100;
 document.querySelector("#calorieBar").style.width = percentage + "%";calorieInput.value = "";
     }
 });
+let newQuote = document.querySelector(".newquote");
+let quoteline = document.querySelector("#quoteline");
+newQuote.addEventListener("click", () => {
+    fetch("https://dummyjson.com/quotes/random")
+        .then((response) => response.json())
+        .then((data) => {
+            quoteline.textContent = '"' + data.quote + '"';
+        });
+});
+let saveQuote = document.querySelector(".savequote");
+saveQuote.addEventListener("click", () => {
+let quote = quoteline.textContent;
+localStorage.setItem("savedQuote", quote);
+});
+let timer = document.querySelector("#timer");
+let startTimer = document.querySelector("#start");
+let resetTimer = document.querySelector("#reset");
+let time = 25 * 60;
+function countdown() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    timer.textContent = minutes + ":" + seconds;
+    if (time > 0) {
+        time--;
+        setTimeout(countdown, 1000);
+        } 
+        else {
+        alert("Pomodoro session completed!");}
+    }
+    startTimer.addEventListener("click", () => {
+    countdown();
+});
+resetTimer.addEventListener("click", () => {
+    time = 25 * 60;
+    timer.textContent = "25:00";
+});
+let weeklyTasks = document.querySelector("#weeklytaskdone");
+weeklyTasks.textContent = tasks.filter((task) => task.completed).length;
+
+let weeklytotaltasks = document.querySelector("#weeklytotaltasks");
+weeklytotaltasks.textContent = tasks.length;
+let weeklywater = document.querySelector("#weeklywater");
+weeklywater.textContent = (water / 1000) + " L";
+let weeklysleep = document.querySelector("#weeklysleep");
+weeklysleep.textContent = sleep + " hrs";

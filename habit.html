@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+   <link rel="stylesheet" href="habit.css">
+</head>
+<body>
+    <aside class="sidebar">
+      <div class="logo">
+      <h2><i class="fa-solid fa-leaf" style="color: rgb(63, 130, 54);"></i>  &nbsp;FitTrack </h2>
+      <p>Small Habits<br>Big Changes</p> </div>
+      <nav class="navigation">
+      <a href="#"><i class="fa-solid fa-house" style="color: rgb(38, 80, 30);"></i>&nbsp; Dashboard </a>
+      <a href="#"><i class="fa-solid fa-list-check" style="color: rgb(38, 80, 30);"></i> &nbsp;Tasks </a>
+      <a href="#" class="active"> <i class="fa-solid fa-calendar-check" style="color: rgb(38, 80, 30);"></i> &nbsp; Habits </a>
+      <a href="#"><i class="fa-solid fa-chart-column" style="color: rgb(38, 80, 30);"></i> &nbsp; Progress </a>
+      <a href="#"><i class="fa-solid fa-droplet" style="color: rgb(60, 140, 190);"></i> &nbsp; Fitness </a>
+      <a href="#"><i class="fa-solid fa-quote-left" style="color: rgb(38, 80, 30);"></i> &nbsp; Quotes </a>
+      </nav>
+     </aside>
+     <main class="main">
+     <div class="content">
+     <div class="header">
+     <div><h1>Habit Tracker</h1><p>Build better habits for a healthier, happier you.</p></div>
+     <div class="date"><i class="fa-regular fa-calendar"></i>Thursday, 4 September 2025</div>
+     </div>
+     <section class="habitcards">
+     <div class="summarycard">
+     <div class="summaryicon totalicon"><i class="fa-solid fa-leaf"></i></div>
+     <div><h4>Total Habits</h4><h2 id="totalHabits">6</h2><p>Keep building!</p></div></div>
+     <div class="summarycard">
+     <div class="summaryicon completedicon"><i class="fa-solid fa-check"></i></div>
+     <div><h4>Completed Today</h4><h2 id="completedHabits">3</h2><p>Great progress!</p></div></div>
+     <div class="summarycard">
+     <div class="summaryicon pendingicon"><i class="fa-regular fa-clock"></i></div>
+     <div><h4>Pending Today</h4><h2 id="pendingHabits">3</h2><p>You can do it!</p></div>
+     </div>
+       <div class="summarycard">
+       <div class="summaryicon streakicon"><i class="fa-solid fa-fire"></i></div>
+       <div><h4>Current Streak</h4><h2 id="habitStreak">12 days</h2><p>Keep it up!</p></div>
+       </div></section>
+       <section class="addhabit">
+       <div class="addheading">
+       <h2><i class="fa-solid fa-plus"></i> Add a New Habit</h2>
+       </div>
+       <div class="habitform">
+       <input type="text" id="habitInput" placeholder="Enter habit name">
+       <select id="habitCategory">
+       <option value="">Select category</option>
+       <option value="Workout">Workout</option>
+       <option value="Fitness">Fitness - 1K steps</option>
+       <option value="Cardio">Cardio - 5km run</option>
+       <option value="Mental Wellness">Mental Wellness - 10min Meditation</option>
+       </select>
+       <select id="habitFrequency">
+       <option value="Daily">Daily</option>
+       <option value="Weekly">Weekly</option>
+       </select>
+       <button id="addHabit">Add Habit</button>
+       </div>
+       </section>
+       <section class="habitmain">
+       <div class="habitleft">
+       <div class="filterbuttons">
+       <button class="filter active">All</button>
+       <button class="filter">Workout</button>
+       <button class="filter">Fitness</button>
+       <button class="filter">Cardio</button>
+       <button class="filter">Mental Wellness</button>
+       </div>
+       <div class="habitheading">
+       <h2>Your Habits</h2>
+       <select>
+       <option>Sort: Newest</option>
+       <option>Sort: Oldest</option>
+       </select>
+       </div>
+       <div class="habitslist" id="habitsList">
+       <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>Wake Up Early</h3></div>
+       <span class="category health">Workout</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i>Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
+        <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>1K Steps</h3></div>
+       <span class="category fitness">Fitness</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button>
+       </div>
+       </div>
+       <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>5km Run</h3></div>
+       <span class="category cardio">Cardio</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
+       <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>10 min Meditation</h3></div>
+       <span class="category mental">Mental Wellness</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
+       <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>Read Book</h3></div>
+       <span class="category fitness">Fitness</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
+       <div class="habitrow">
+       <input type="checkbox">
+       <div class="habiticon"></div>
+       <div class="habitname"><h3>Workout</h3></div>
+       <span class="category health">Workout</span>
+       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
+       <div class="habitactions">
+       <button><i class="fa-solid fa-pen"></i></button>
+       <button class="delete"><i class="fa-solid fa-trash"></i></button></div>
+       </div></div>
+       <div class="activity">
+       <div class="sideheading">
+       <h2><i class="fa-solid fa-chart-column" style="color: rgb(63, 130, 54);"></i> Habit Activity</h2>
+       <select>
+       <option>This Month</option>
+       <option>Last 30 Days</option></select></div>
+       <div class="activitydays">
+       <span>Mon</span>
+       <span>Tue</span>
+       <span>Wed</span>
+       <span>Thu</span>
+       <span>Fri</span>
+       <span>Sat</span>
+       <span>Sun</span>
+       </div><div class="activityrow">
+       <p>Wake Up Early</p>
+       <div class="squares">
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       </div></div>
+       <div class="activityrow">
+       <p>1K Steps</p>
+       <div class="squares">
+       <span class="done"></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       </div></div>
+       <div class="activityrow">
+       <p>Meditation</p>
+       <div class="squares">
+       <span></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span></span>
+       <span class="done"></span>
+       </div>
+       </div>
+       <div class="activityrow">
+       <p>Workout</p>
+       <div class="squares">
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       <span></span>
+       </div>
+       </div>
+       <div class="activityrow">
+       <p>Read Book</p>
+       <div class="squares">
+       <span class="done"></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span class="done"></span>
+       <span></span>
+       <span class="done"></span>
+       <span class="done"></span></div></div></div>
+       </div>
+
+       <div class="habitright">
+       <div class="categorychart">
+       <h2>Habit Distribution</h2>
+       <div class="piechart"></div>
+       <div class="percentage">
+       <h2>Completion Percentage</h2>
+       <div class="percentageitem">
+       <span>Workout</span>
+       <strong>33%</strong>
+       </div>
+       <div class="percentageitem">
+       <span>Fitness</span>
+       <strong>17%</strong>
+       </div>
+       <div class="percentageitem">
+       <span>Cardio</span>
+       <strong>17%</strong>
+       </div>
+       <div class="percentageitem">
+       <span>Mental Wellness</span>
+       <strong>33%</strong>
+       </div>
+       </div>
+       </div>
+       <div class="categories">
+       <h2>Habit Categories</h2>
+       <div class="categoryitem">
+       <span class="categorydot healthdot"></span>
+       <span>Workout</span>
+       <strong>2</strong></div>
+       <div class="categoryitem">
+       <span class="categorydot fitnessdot"></span>
+       <span>Fitness</span>
+       <strong>1</strong></div>
+       <div class="categoryitem">
+       <span class="categorydot cardiodot"></span>
+       <span>Cardio</span>
+       <strong>1</strong></div>
+       <div class="categoryitem">
+       <span class="categorydot mentaldot"></span>
+       <span>Mental Wellness</span>
+       <strong>1</strong></div></div>
+       <div class="motivation">
+       <i class="fa-solid fa-leaf"></i>
+       <div>
+       <h3>Consistency Creates Change</h3>
+       <p>Small steps every day lead to big results.</p></div></div>
+       </div>
