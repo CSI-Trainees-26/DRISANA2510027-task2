@@ -25,16 +25,22 @@ let sleepData = document.querySelector("#sleepData");
 let sleep = JSON.parse(localStorage.getItem("sleep")) || 0;
 let sleepTarget = 6;
 addSleep.addEventListener("click", () => {
-sleep = Number(sleepInput.value);
-if (sleep >= 0 && sleep <= 24) {
-localStorage.setItem("sleep", JSON.stringify(sleep));
-sleepData.textContent = sleep + " / " + sleepTarget + " hrs";
-let percentage = (sleep / sleepTarget) * 100;
-          if (percentage > 100) {
-            percentage = 100; }
- document.querySelector("#sleep").style.width = percentage + "%";
-    }
-});
+    sleep = Number(sleepInput.value);
+    if (sleep >= 0 && sleep <= 24) {
+        localStorage.setItem("sleep", JSON.stringify(sleep));
+        sleepData.textContent = sleep + " / " + sleepTarget + " hrs";
+        let percentage = (sleep / sleepTarget) * 100;
+        if (percentage > 100) {
+            percentage = 100;
+        }
+        document.querySelector("#sleep").style.width = percentage + "%";
+        if (sleep < 4) {
+            document.querySelector(".sleepcard").style.backgroundColor = "#fff0f0";
+            document.querySelector("#sleep").style.backgroundColor = "#e53935";
+        } else {
+            document.querySelector(".sleepcard").style.backgroundColor = "#f3ebff";
+            document.querySelector("#sleep").style.backgroundColor = "#9b5de5";
+        }}});
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let taskSection = document.querySelector(".tasks");
 let taskRows = taskSection.querySelectorAll(".task");
@@ -138,9 +144,15 @@ resetTimer.addEventListener("click", () => {
 });
 let weeklyTasks = document.querySelector("#weeklytaskdone");
 weeklyTasks.textContent = tasks.filter((task) => task.completed).length;
-let weeklytotaltasks = document.querySelector("#weeklytotaltasks");
+let weeklytotaltasks = document.querySelector("#weeklytotaltask");
 weeklytotaltasks.textContent = tasks.length;
 let weeklywater = document.querySelector("#weeklywater");
 weeklywater.textContent = (water / 1000) + " L";
 let weeklysleep = document.querySelector("#weeklysleep");
 weeklysleep.textContent = sleep + " hrs";
+
+let menubtn = document.querySelector("#menubtn"); 
+let sidebar = document.querySelector(".sidebar"); 
+menubtn.addEventListener("click", () => { 
+    sidebar.classList.toggle("collapsed"); 
+});

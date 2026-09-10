@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,11 @@ body {
     background-color: #f5f7f2;
     color: #26351f;
     display: flex;
+    background-image: url("imgbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 .sidebar {
     width: 20%;
@@ -20,8 +26,19 @@ body {
     padding: 1%;
 }
 .logo h2 {
+    position:relative;
     color: rgb(38, 80, 30);
     font-size: 1.5rem;
+}
+.menubtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    color: rgb(38, 80, 30);
+    font-size: 1rem;
+    cursor: pointer;
 }
 .logo p {
     color: #777;
@@ -74,6 +91,12 @@ body {
     height: 16vh;
     margin-top: 3vh;
     background-color: #dfeeda;
+    border-radius: 1rem;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 1rem;
 }
 
@@ -168,6 +191,18 @@ body {
 #task {
    background-color: #f3a51b;
 }
+.taskcard {
+    background-color:  #FFF3E6;;
+}
+.habitcard {
+    background-color: #FFF9DB;;
+}
+.watercard {
+    background-color: #eaf6fb;
+}
+.sleepcard {
+    background-color: #f3ebff;
+}
 .taskhabit {
     width: 100%;
     display: flex;
@@ -238,6 +273,9 @@ body {
     border-radius: 1rem;
     padding: 2rem;
     margin-bottom: 2vh;
+}
+.bgcolortimer{
+    background-color: #EAF6FB;
 }
 .pomodoro h2,.quote h2 {
     font-size: 1.1rem;
@@ -591,3 +629,41 @@ body {
 .calories button:hover{
     background: #cfe5c8;
 }
+.sleepcard {
+    background-color: #f3ebff;
+}
+#sleep {
+    background-color: #9b5de5;
+}
+
+@media (max-width: 900px) {
+    .menubtn {
+        display: block;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .main {
+        margin-left: 0;
+    }
+}
+.sidebar.collapsed {
+    width: 4rem;
+}
+.sidebar.collapsed .logo h2 {
+    font-size: 1rem;
+}
+.sidebar.collapsed .logo p,.sidebar.collapsed .navigation 
+{
+    display: none;
+}
+.sidebar.collapsed .menubtn {
+    right: 1rem;
+    top: 1rem;
+}
+
+
