@@ -471,6 +471,41 @@ body{
 .percentageitem strong{
     color: rgb(38,80,30);
 }
+.squares .square.level1{
+    background: #f9d85c;
+}
+.squares .square.level2{
+    background: #2f7d32;
+}
+.squares .square.level3{
+    background: #f39c12;
+}
+.overallactivity{
+    margin-top: 2vh;
+    padding: 2vh;
+    background: #f5f7f2;
+    border-radius: 1rem;
+}
+.overalldays,.overallsquares{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1vh;
+    text-align: center;
+}
+.overallsquares span{
+    height: 3vh;
+    background: #e0e0e0;
+    border-radius: 0.3rem;
+}
+.overallsquares span.level1{
+    background: #f9d85c;
+}
+.overallsquares span.level2{
+    background: #2f7d32;
+}
+.overallsquares span.level3{
+    background: #f39c12;
+}
 @media(max-width: 900px){
     .sidebar{
         width: 20%;
@@ -518,3 +553,4 @@ body{
         width: auto;
     }
 }
+

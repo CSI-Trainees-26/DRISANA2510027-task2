@@ -23,10 +23,15 @@ let habitsList = document.querySelector("#habitsList");
     showHabits();
     }
 });
-function showHabits() {
+        function showHabits() {
+        let dynamicHabits = document.querySelectorAll(".dynamicHabit");
+        dynamicHabits.forEach((habit) => {
+        habit.remove();
+    });
         habits.forEach((habit) => {
         let habitRow = document.createElement("div");
         habitRow.classList.add("habitrow");
+        habitRow.classList.add("dynamicHabit");
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = habit.completed;
@@ -43,8 +48,8 @@ function showHabits() {
         habit.history = habit.history.filter((date) => date !== today);
     }
         localStorage.setItem("habits", JSON.stringify(habits));
-       updateHabitCounts();
-});
+        updateHabitCounts();
+        updateActivity(); });
        let name = document.createElement("div");
         name.classList.add("habitname");
         let heading = document.createElement("h3");
@@ -88,11 +93,12 @@ function showHabits() {
         actions.appendChild(deleteButton);
         habitRow.appendChild(checkbox);
         habitRow.appendChild(name);
-        habitRow.appendChild(category);
+        habitRow.appendChild(category); 
         habitRow.appendChild(frequency);
         habitRow.appendChild(actions);
         habitsList.appendChild(habitRow); });}
         showHabits();
+        updateHabitCounts();
         let filters = document.querySelectorAll(".filter");
         filters.forEach((filter) => {
         filter.addEventListener("click", () => {
@@ -116,6 +122,39 @@ function showHabits() {
         habits.sort((a, b) => b.id - a.id);
         } 
         else {
-        habits.sort((a, b) => a.id - b.id);}  
-        showHabits();
-});
+    habits.sort((a, b) => a.id - b.id);
+}
+    showHabits(); });
+    function updateHabitCounts() {
+    let total = habits.length +6;
+    let completed = habits.filter((habit) => habit.completed).length;
+    let pending = total - completed;
+    document.querySelector("#totalHabits").textContent = total;
+    document.querySelector("#completedHabits").textContent = completed;
+    document.querySelector("#pendingHabits").textContent = pending;
+}
+ function updateActivity() {
+    let squares = document.querySelectorAll(".overallsquares span");
+    let today = new Date();
+    squares.forEach((square, index) => {
+    let date = new Date();
+    date.setDate(today.getDate() - (6 - index));
+    let dateString = date.toISOString().split("T")[0];
+    let count = 0;
+    habits.forEach((habit) => {
+            if (habit.history && habit.history.includes(dateString)) {
+                count++;
+            }
+        });
+        square.classList.remove("level1", "level2", "level3");
+        if (count === 1) {
+            square.classList.add("level1");
+        }
+        else if (count === 2) {
+            square.classList.add("level2");
+        }
+        else if (count >= 3) {
+            square.classList.add("level3");
+        }
+    });
+}

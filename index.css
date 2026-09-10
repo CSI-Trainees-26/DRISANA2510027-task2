@@ -76,13 +76,17 @@ body {
     background-color: #dfeeda;
     border-radius: 1rem;
 }
+
 .cards {
-    display: flex;
-    gap: 2%;
-    margin-top: 3vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
 }
+
 .card {
-    width: 23.5%;
+     width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     min-height: 15vh;
     background-color: white;
     border-radius: 1rem;

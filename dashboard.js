@@ -1,3 +1,10 @@
+let today = new Date();
+let options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"};
+document.querySelector("#todayDate").innerHTML = '<i class="fa-regular fa-calendar"></i> ' + today.toLocaleDateString("en-IN", options);
 let addWater = document.querySelector("#addWater");
 let waterData = document.querySelector("#waterData");
 let water = JSON.parse(localStorage.getItem("water")) || 1500;
@@ -131,7 +138,6 @@ resetTimer.addEventListener("click", () => {
 });
 let weeklyTasks = document.querySelector("#weeklytaskdone");
 weeklyTasks.textContent = tasks.filter((task) => task.completed).length;
-
 let weeklytotaltasks = document.querySelector("#weeklytotaltasks");
 weeklytotaltasks.textContent = tasks.length;
 let weeklywater = document.querySelector("#weeklywater");
