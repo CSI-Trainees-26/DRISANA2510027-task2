@@ -74,12 +74,15 @@ body{
     border-radius: 0.6rem;
     color: #555;
     font-size: 0.9rem;
+    margin-top: 15px;
+    box-shadow: #19351d;
 }
 .habitcards{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
     margin-bottom: 1.3rem;
+     margin-top: 15px;
 }
 .summarycard{
     background: white;

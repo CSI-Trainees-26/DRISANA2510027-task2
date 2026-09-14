@@ -1,3 +1,5 @@
+
+
 let today = new Date();
 let options = {
     weekday: "long",
@@ -6,12 +8,16 @@ let options = {
     year: "numeric"};
 document.querySelector("#todayDate").innerHTML = '<i class="fa-regular fa-calendar"></i> ' + today.toLocaleDateString("en-IN", options);
 let addWater = document.querySelector("#addWater");
+console.log(addWater);
 let waterData = document.querySelector("#waterData");
-let water = JSON.parse(localStorage.getItem("water")) || 1500;
+let water = 1500;
 document.querySelector("#water").style.width = (water / 2500) * 100 + "%";
 addWater.addEventListener("click", () => {
+    console.log("water button is clicked");
+     console.log("water before:", water);
     if (water < 2500) {
         water = water + 250;
+        console.log("water after:", water);
         localStorage.setItem("water" , JSON.stringify(water));
         waterData.textContent = water / 1000 + "/2.5L";
          let percentage = (water / 2500) * 100;
@@ -116,6 +122,7 @@ let saveQuote = document.querySelector(".savequote");
 saveQuote.addEventListener("click", () => {
 let quote = quoteline.textContent;
 localStorage.setItem("savedQuote", quote);
+alert("your quote is saved");
 });
 let timer = document.querySelector("#timer");
 let startTimer = document.querySelector("#start");

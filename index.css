@@ -101,6 +101,7 @@ body {
 }
 
 .cards {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
@@ -563,6 +564,7 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
     transition: 0.2s;
+    box-shadow: black;
 }
 #addWater:hover {
     background-color: #326b2c;
@@ -634,6 +636,9 @@ body {
 }
 #sleep {
     background-color: #9b5de5;
+}
+#addCalories{
+    margin-top: 15px;
 }
 
 @media (max-width: 900px) {
