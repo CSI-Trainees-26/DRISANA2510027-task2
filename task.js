@@ -1,11 +1,18 @@
+
+let todayDate = document.querySelector("#todayDate");
+let today = new Date();
+todayDate.textContent = today.toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+});
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function saveTasks() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+    localStorage.setItem("tasks", JSON.stringify(tasks));}
 let addBtn = document.querySelector(".addtask");
 let pendingtasklist = document.querySelector("#pendingtasklist");
 let completedtasklist = document.querySelector("#completedtasklist");
-
 addBtn.addEventListener("click", () => {
 let newTask = document.createElement("div");
 newTask.classList.add("taskrow");
@@ -22,9 +29,9 @@ if (e.key === "Enter") {
 if (taskText !== "") {
     tasks.push({
         text: taskText,
-        completed: false});
+        completed: false,
+  completedDate: ""  });
        saveTasks();
-
 let task = document.createElement("div");
 task.classList.add("taskrow");
 let checkbox = document.createElement("input");
@@ -36,6 +43,11 @@ task.classList.toggle("completedtask");
 let taskIndex = tasks.findIndex((item) => item.text === text.textContent);
 if (taskIndex !== -1) {
     tasks[taskIndex].completed = checkbox.checked;
+    if (checkbox.checked) {
+      tasks[taskIndex].completedDate = new Date().toISOString().split("T")[0];
+    } else {
+      tasks[taskIndex].completedDate = "";
+    }
 }
 saveTasks();
 updateCounters();
@@ -92,20 +104,75 @@ pendingTask.addEventListener("dragend", () => {
 newTask.remove();
 updateCounters();}}});
 });
-
 function updateCounters() {
 let totalTasks = document.querySelector("#totalTasks");
 let tasks = document.querySelectorAll(".todaytasks .taskrow");
 totalTasks.textContent = tasks.length;
-
 let completedTasks = document.querySelector("#completedTasks");
 let completed = document.querySelectorAll(".todaytasks .completedtask");
 completedTasks.textContent = completed.length;
-
 let pendingTasks = document.querySelector("#pendingTasks");
 pendingTasks.textContent = tasks.length - completed.length;
 }
 updateCounters();
+tasks.forEach((savedTask) => {
+    let task = document.createElement("div");
+    task.classList.add("taskrow");
+
+    if (savedTask.completed) {
+        task.classList.add("completedtask");
+    }
+
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = savedTask.completed;
+
+    let text = document.createElement("p");
+    text.textContent = savedTask.text;
+
+    task.appendChild(checkbox);
+    task.appendChild(text);
+
+    let delAdd = document.createElement("div");
+delAdd.classList.add("taskactions");
+
+let editBtn = document.createElement("button");
+editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+editBtn.addEventListener("click", () => {
+    let editTask = document.createElement("input");
+    editTask.value = text.textContent;
+    task.replaceChild(editTask, text);
+    editTask.focus();
+     editTask.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && editTask.value !== "") {
+            let taskIndex = tasks.findIndex((item) => item.text === text.textContent);
+                if (taskIndex !== -1) {
+                tasks[taskIndex].text = editTask.value;
+            }
+            text.textContent = editTask.value;
+            task.replaceChild(text, editTask);
+            saveTasks();
+        }});
+});
+
+let deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete");
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteBtn.addEventListener("click", () => {
+        let taskIndex = tasks.findIndex((item) => item.text === text.textContent);
+     if (taskIndex !== -1) {
+            tasks.splice(taskIndex, 1);
+        }
+        saveTasks();
+        task.remove();
+        updateCounters();
+    });
+
+    delAdd.appendChild(editBtn);
+    delAdd.appendChild(deleteBtn);
+    task.appendChild(delAdd);
+    document.querySelector(".todaytasks").appendChild(task);
+});
 let draggableTasks = document.querySelectorAll("#pendingtasklist .smalltask");
 draggableTasks.forEach((task) => {
     task.setAttribute("draggable", "true");

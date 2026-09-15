@@ -111,21 +111,18 @@
     <h2>Weekly Activity</h2>
     <span>This Week</span>
     </div>
-    <div class="chart">
-    <div class="bar">
-    <div class="barfill" style="height: 40%;"></div>
-    <p>Mon</p></div>
-    <div class="bar">
-    <div class="barfill" style="height: 70%;"></div> <p>True</p></div>
-    <div class="bar"><div class="barfill" style="height: 50%;"></div><p>Wed</p></div>
-    <div class="bar"><div class="barfill" style="height: 85%;"></div><p>Thu</p></div>
-    <div class="bar"><div class="barfill" style="height: 60%;"></div><p>Fri</p></div>
-    <div class="bar"><div class="barfill" style="height: 75%;"></div><p>Sat</p></div>
-    <div class="bar"><div class="barfill" style="height: 45%;"></div><p>Sun</p></div>
-    </div></div>
+<div class="chart">
+<div class="bar"><div class="barfill"></div><p>Mon</p></div>
+<div class="bar"><div class="barfill"></div><p>Tue</p></div>
+<div class="bar"><div class="barfill"></div><p>Wed</p></div>
+<div class="bar"><div class="barfill"></div><p>Thu</p></div>
+<div class="bar"><div class="barfill"></div><p>Fri</p></div>
+<div class="bar"><div class="barfill"></div><p>Sat</p></div>
+<div class="bar"><div class="barfill"></div><p>Sun</p></div>
+</div></div>
     <div class="streak">
     <div class="heading">
-    <h2><i class="fa-solid fa-fire" style="color: #f47c32;"></i> Habit Streak</h2><span>September 2025</span></div>
+    <h2><i class="fa-solid fa-fire" style="color: #f47c32;"></i> Habit Streak</h2><span id="streakMonth"></span></div>
     <div class="weekdays">
     <span>Mon</span>
     <span>Tue</span>
@@ -135,45 +132,13 @@
     <span>Sat</span>
     <span>Sun</span>
     </div>
-    <div class="monthdatagrid">
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        <span class="done"></span>
-        <span></span>
-        <span class="done"></span>
-        </div>
+    <div class="monthdatagrid" id="monthdatagrid"></div>
+        
+        
+        
+       
         <div class="streakresult">
-        <strong>12 day streak <i class="fa-solid fa-fire" style="color: #f47c32;"></i></strong>
+      <strong><span id="streakCount">0</span> day streak <i class="fa-solid fa-fire" style="color: #f47c32;"></i></strong>
         <span>Keep going!</span>
        </div></div>
        </section>
@@ -221,5 +186,7 @@
   <p>Keep going and stay consistent.</p>
   </div></div>
 <script src="dashboard.js"></script>
+<script src="graph.js"></script>
+<script src="streak.js"></script>
 </body>
 </html>

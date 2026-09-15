@@ -26,7 +26,7 @@
      <div class="content">
      <div class="header">
      <div><h1>Habit Tracker</h1><p>Build better habits for a healthier, happier you.</p></div>
-     <div class="date"><i class="fa-regular fa-calendar"></i>Thursday, 10 September 2026</div>
+     <div class="date"><i class="fa-regular fa-calendar"></i><h3 id="todayDate"></h3></div>
      </div>
      <section class="habitcards">
      <div class="summarycard">
@@ -41,7 +41,7 @@
      </div>
        <div class="summarycard">
        <div class="summaryicon streakicon"><i class="fa-solid fa-fire"></i></div>
-       <div><h4>Current Streak</h4><h2 id="habitStreak">12 days</h2><p>Keep it up!</p></div>
+       <div><h4>Current Streak</h4><h2 id="habitStreak">2 days</h2><p>Keep it up!</p></div>
        </div></section>
        <section class="addhabit">
        <div class="addheading">
@@ -52,9 +52,9 @@
        <select id="habitCategory">
        <option value="">Select category</option>
        <option value="Workout">Workout</option>
-       <option value="Fitness">Fitness - 1K steps</option>
-       <option value="Cardio">Cardio - 5km run</option>
-       <option value="Mental Wellness">Mental Wellness - 10min Meditation</option>
+       <option value="Fitness">Fitness </option>
+       <option value="Cardio">Cardio </option>
+       <option value="Mental Wellness">Mental Wellness </option>
        </select>
        <select id="habitFrequency">
        <option value="Daily">Daily</option>
@@ -80,63 +80,7 @@
        </select>
        </div>
        <div class="habitslist" id="habitsList">
-       <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>Wake Up Early</h3></div>
-       <span class="category health">Workout</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i>Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
-        <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>1K Steps</h3></div>
-       <span class="category fitness">Fitness</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button>
-       </div>
-       </div>
-       <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>5km Run</h3></div>
-       <span class="category cardio">Cardio</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
-       <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>10 min Meditation</h3></div>
-       <span class="category mental">Mental Wellness</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
-       <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>Read Book</h3></div>
-       <span class="category fitness">Fitness</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button></div></div>
-       <div class="habitrow">
-       <input type="checkbox">
-       <div class="habiticon"></div>
-       <div class="habitname"><h3>Workout</h3></div>
-       <span class="category health">Workout</span>
-       <span class="frequency"><i class="fa-solid fa-rotate"></i> Daily</span>
-       <div class="habitactions">
-       <button><i class="fa-solid fa-pen"></i></button>
-       <button class="delete"><i class="fa-solid fa-trash"></i></button></div>
-       </div></div>
+      </div>
        <div class="activity">
        <div class="sideheading">
        <h2><i class="fa-solid fa-chart-column" style="color: rgb(63, 130, 54);"></i> Habit Activity</h2>
@@ -212,24 +156,24 @@
        <div class="habitright">
        <div class="categorychart">
        <h2>Habit Distribution</h2>
-       <div class="piechart"></div>
+       <div class="piechart" id="piechart"></div>
        <div class="percentage">
        <h2>Completion Percentage</h2>
        <div class="percentageitem">
        <span>Workout</span>
-       <strong>33%</strong>
+       <strong id="workoutPercentage">0%</strong>
        </div>
        <div class="percentageitem">
        <span>Fitness</span>
-       <strong>17%</strong>
+       <strong id="fitnessPercentage">0%</strong>
        </div>
        <div class="percentageitem">
        <span>Cardio</span>
-       <strong>17%</strong>
+       <strong id="cardioPercentage">0%</strong>
        </div>
        <div class="percentageitem">
        <span>Mental Wellness</span>
-       <strong>33%</strong>
+       <strong id="mentalPercentage">0%</strong>
        </div>
        </div>
        </div>
@@ -238,19 +182,19 @@
        <div class="categoryitem">
        <span class="categorydot healthdot"></span>
        <span>Workout</span>
-       <strong>2</strong></div>
+       <strong id="workoutCount"></strong></div>
        <div class="categoryitem">
        <span class="categorydot fitnessdot"></span>
        <span>Fitness</span>
-       <strong>1</strong></div>
+       <strong id="fitnessCount">0</strong></div>
        <div class="categoryitem">
        <span class="categorydot cardiodot"></span>
        <span>Cardio</span>
-       <strong>1</strong></div>
+       <strong id="cardioCount">0</strong></div>
        <div class="categoryitem">
        <span class="categorydot mentaldot"></span>
        <span>Mental Wellness</span>
-       <strong>1</strong></div></div>
+       <strong id="mentalCount">0</strong></div></div>
        <div class="motivation">
        <i class="fa-solid fa-leaf"></i>
        <div>
@@ -282,5 +226,6 @@
 
        </div>
        <script src="habit.js"></script>
+       <script src="habitchart.js"></script>
       </body>
 </html>

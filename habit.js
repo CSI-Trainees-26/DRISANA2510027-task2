@@ -1,3 +1,11 @@
+let todayDate = document.querySelector("#todayDate");
+let today = new Date();
+todayDate.textContent = today.toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+});
 let habits = JSON.parse(localStorage.getItem("habits")) || [];
 let habitInput = document.querySelector("#habitInput");
 let habitCategory = document.querySelector("#habitCategory");
@@ -21,12 +29,13 @@ let habitsList = document.querySelector("#habitsList");
     habitCategory.value = "";
     habitFrequency.value = "Daily";
     showHabits();
+    updateHabitChart();
     }
 });
-        function showHabits() {
-        let dynamicHabits = document.querySelectorAll(".dynamicHabit");
-        dynamicHabits.forEach((habit) => {
-        habit.remove();
+function showHabits() {
+let dynamicHabits = document.querySelectorAll(".dynamicHabit");
+dynamicHabits.forEach((habit) => {
+habit.remove();
     });
         habits.forEach((habit) => {
         let habitRow = document.createElement("div");
@@ -122,11 +131,11 @@ let habitsList = document.querySelector("#habitsList");
         habits.sort((a, b) => b.id - a.id);
         } 
         else {
-    habits.sort((a, b) => a.id - b.id);
+     habits.sort((a, b) => a.id - b.id);
 }
     showHabits(); });
     function updateHabitCounts() {
-    let total = habits.length +6;
+    let total = habits.length ;
     let completed = habits.filter((habit) => habit.completed).length;
     let pending = total - completed;
     document.querySelector("#totalHabits").textContent = total;
@@ -138,7 +147,7 @@ let habitsList = document.querySelector("#habitsList");
     let today = new Date();
     squares.forEach((square, index) => {
     let date = new Date();
-    date.setDate(today.getDate() - (6 - index));
+    date.setDate(today.getDate() - ( index));
     let dateString = date.toISOString().split("T")[0];
     let count = 0;
     habits.forEach((habit) => {
